@@ -17,7 +17,7 @@ export function LampDemo() {
         }}
         className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-transparent ">
         all your personal data and transactions are encrypted and secured.
-        there's no room for mistakes because we didn't leave any
+        there&apos;s no room for mistakes because we didn&apos;t leave any
       </motion.h1>
     </LampContainer>
     </div>
