@@ -1,12 +1,14 @@
 "use client";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import { LampDemo } from "./components/LampBg";
 import { Navbar } from "./components/NavBar";
 import navItems from "./utils/NavItems";
-import { MaskContainer } from "./components/MaskEffect";
+import Image from "next/image";
 import { InfiniteMovingCards } from "./components/InfiniteMovingCards";
 import { fetchTestimonial } from "@/lib/fetchTestimonials";
 import { BottomFooter } from "./components/BottomFooter";
+import { MacbookScroll } from "./components/MacbookScroll";
+import Link from "next/link";
 
 export default async function Home() {
   const testimonialsData = await fetchTestimonial();
@@ -14,6 +16,31 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Navbar navItems={navItems} className="custom-classname" />
+
+      <div className="overflow-hidden dark:bg-[#0b0b0f] bg-white w-full">
+        <MacbookScroll
+          title={
+            <span>
+              Your Instant Loan Companion
+              <br /> NeoPaisa.com
+            </span>
+          }
+          badge={
+            <Link href="https://neopaisa.com/">
+              <Image
+                src="logo.svg"
+                width={30}
+                height={20}
+                alt="ss"
+                className="flex-shrink-0 rounded-md shadow-2xl"
+              />
+            </Link>
+          }
+          src={`/linear.png`}
+          showGradient={false}
+        />
+      </div>
+
       <LampDemo />
 
       <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
@@ -24,23 +51,15 @@ export default async function Home() {
         />
       </div>
 
-      <MaskContainer
-        revealText={
-          <p className="max-w-4xl mx-auto text-slate-800 text-center  text-4xl font-bold">
-            Your personal data and information are fully encrypted and securely
-            protected. We've meticulously ensured there’s no room for error,
-            leaving nothing to chance.
-          </p>
-        }
-        className="h-[40rem] ">
-        Your personal data and information are fully{" "}
-        <span className="text-[#c3d740]">encrypted</span>
-        and securely <span className="text-[#c3d740]">protected. </span>. We've
-        meticulously ensured there’s no room for error, leaving nothing to
-        chance.
-      </MaskContainer>
+      {/* <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards
+          items={testimonialsData}
+          direction="right"
+          speed="slow"
+        />
+      </div> */}
 
-      <BottomFooter/>
+      <BottomFooter />
     </main>
   );
 }
