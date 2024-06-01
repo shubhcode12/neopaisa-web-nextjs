@@ -68,19 +68,27 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[200vh]  flex flex-col items-center py-0 md:py-60 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50">
+      className="min-h-[100vh] flex flex-col items-center py-0 md:py-10 lg:py-60 sm:py-10 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.50] sm:scale-50">
+      <a href="https://play.google.com/store/apps/details?id=com.neopaisa.app">
+        <button className="inline-flex h-10 mb-8 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+          Get Started Now
+        </button>
+      </a>
+
       <motion.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="dark:text-white text-neutral-800 text-3xl font-bold mb-20 text-center">
+        className="dark:text-white text-neutral-800 text-4xl sm:text-5xl md:text-4xl lg:text-4xl font-bold mb-10 text-center">
         {title || (
           <span>
             This Macbook is built with Tailwindcss. <br /> No kidding.
           </span>
         )}
+
       </motion.h2>
+
       {/* Lid */}
       <Lid
         src={src}
