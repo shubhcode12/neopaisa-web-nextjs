@@ -107,7 +107,7 @@ export const Header = () => {
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
         NeoPaisa is designed to simplify your financial needs by providing
-        instant loans through our trusted channel partners. Whether you're
+        instant loans through our trusted channel partners. Whether you&apos;re
         planning a big purchase, need emergency funds, or want to consolidate
         your debts, NeoPaisa is here to help. With our user-friendly interface,
         you can easily apply for loans, access financial tips, read informative
