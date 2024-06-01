@@ -14,31 +14,31 @@ export const BottomFooter = () => {
           height={37}
           priority
         />
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2024{" "}
-          <a href="https://neopaisa.com/" class="hover:underline">
+          <a href="https://neopaisa.com/" className="hover:underline">
             Flowbite™
           </a>
           . All Rights Reserved.
         </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
           <li>
-            <a href="#" class="hover:underline me-4 md:me-6">
+            <a href="/about" className="hover:underline me-4 md:me-6">
               About
             </a>
           </li>
           <li>
-            <a href="#" class="hover:underline me-4 md:me-6">
+            <a href="/privacy" className="hover:underline me-4 md:me-6">
               Privacy Policy
             </a>
           </li>
           <li>
-            <a href="#" class="hover:underline me-4 md:me-6">
-              Licensing
+            <a href="/terms" className="hover:underline me-4 md:me-6">
+              Terms & Conditions
             </a>
           </li>
           <li>
-            <a href="#" class="hover:underline">
+            <a href="/contact" className="hover:underline">
               Contact
             </a>
           </li>
