@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 
 export const BottomFooter = () => {
   return (
-    <footer class="bg-white rounded-lg shadow m-4 dark:bg-black">
-      <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <footer className="bg-white rounded-full shadow m-4 dark:bg-black">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70]"
           src="/logo.svg"
           alt="Next.js Logo"
-          width={50}
-          height={37}
+          width={30}
+          height={20}
           priority
         />
-        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span className="text-sm px-2 text-gray-500 sm:text-center dark:text-gray-400">
           © 2024{" "}
           <a href="https://neopaisa.com/" className="hover:underline">
-            Flowbite™
+            NeoPaisa™
           </a>
-          . All Rights Reserved.
+          
         </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <ul className="flex px-2 flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
           <li>
             <a href="/about" className="hover:underline me-4 md:me-6">
               About
