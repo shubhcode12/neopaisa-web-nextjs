@@ -56,12 +56,15 @@ export default async function BlogsSection() {
                   {item.title}
                 </div>
               )}
-              {item?.description && (
-                <div className="font-sans font-normal text-neutral-600 text-sm dark:text-neutral-300">
-                  {truncateText(item.description, 10)}
+              {item?.content && (
+                <div className="font-sans font-normal text-gray-500 text-sm dark:text-neutral-300">
+                  {item.content.map((cont: any, index: any) => (
+                    <div key={index} className="mb-2">
+                      {truncateText(cont.text , 10)}
+                    </div>
+                  ))}
                 </div>
               )}
-              <Link href="/blogs">{item?.uid}</Link>
             </div>
           </div>
         ))}
