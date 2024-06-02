@@ -1,6 +1,4 @@
 import React from "react";
-import { client } from "@/lib/prismic-configuration";
-import Footer from "../components/Footer";
 import { Navbar } from "../components/NavBar";
 import navItems from "../utils/NavItems";
 
