@@ -22,7 +22,7 @@ export default async function BlogsSection() {
       <BentoGrid className="max-w-1xl mx-auto mt-10">
         {blogs.map((item, i) => (
           <BentoGridItem
-            key={item.uid}
+            uid={item.uid}
             title={item.title}
             description={`${item.content[0].text.substring(0, 100)}...`} // Limit the description to 100 characters
             category={item.category}
