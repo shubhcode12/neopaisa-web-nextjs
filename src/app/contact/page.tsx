@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import { Navbar } from "../components/NavBar";
 import navItems from "../utils/NavItems";
 import { useState } from "react";
@@ -6,58 +6,120 @@ import { database } from "../utils/firebaseConfig";
 import { get, ref, push } from "firebase/database";
 
 export default function Contact() {
+
+  const [formData, setFormData] = useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      const dbRef = ref(database, "contactForms");
+
+      const dateTime = new Date().toLocaleString();
+
+      const newFormData = {
+        ...formData,
+        dateTime: dateTime,
+      };
+      await push(dbRef, newFormData);
+
+      setFormData({
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      console.log("Form data submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form data:", error);
+    }
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="relative bg-[#0c0c10] flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10">
       <Navbar navItems={navItems} className="custom-classname" />
 
-      <div className="relative flex flex-col items-center justify-center w-full py-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-200 via-transparent to-transparent opacity-50 blur-3xl"></div>
-        <div className="relative z-10 max-w-4xl p-8 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-          <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100">Contact Us</h2>
-          <p className="mt-2 text-center text-gray-600 dark:text-gray-400">We would love to hear from you!</p>
+      <section
+        id="testimonials"
+        className="max-w-7xl mx-auto w-full relative overflow-hidden py-44 px-4">
+        <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
+          Contact Us <span className="text-[#c3d740]"></span>
+        </h2>
+        <p className="text-center text-base md:text-lg font-normal text-gray-500 max-w-md mt-2 mx-auto">
+          Got a technical issue? Want to send feedback about a beta feature?
+          Need details about our Business plan? Let us know.
+        </p>
 
-          <form className="mt-8 space-y-6">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <section className="">
+          <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">First Name</label>
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  Your email
+                </label>
                 <input
-                  type="text"
-                  className="block w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-100 focus:ring focus:ring-[#0000FF] focus:outline-none"
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                  placeholder="name@neopaisa.com"
+                  required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Last Name</label>
+                <label
+                  htmlFor="subject"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  Subject
+                </label>
                 <input
                   type="text"
-                  className="block w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-100 focus:ring focus:ring-[#0000FF] focus:outline-none"
+                  id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                  placeholder="Let us know how we can help you"
+                  required
                 />
               </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-              <input
-                type="email"
-                className="block w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-100 focus:ring focus:ring-[#0000FF] focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-              <textarea
-                className="block w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-100 focus:ring focus:ring-[#0000FF] focus:outline-none"
-                rows={4}
-              ></textarea>
-            </div>
-            <div className="flex justify-center">
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                  Your message
+                </label>
+                <textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  placeholder="Leave a comment..."></textarea>
+              </div>
+
               <button
                 type="submit"
-                className="px-6 py-2 text-white bg-[#0000FF] rounded-lg hover:bg-blue-600 focus:ring focus:ring-[#0000FF] focus:outline-none dark:bg-blue-400 dark:hover:bg-blue-500"
-              >
-                Send Message
+                className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+                <span>Submit</span>
+                <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
               </button>
-            </div>
-          </form>
-        </div>
-      </div>
+            </form>
+          </div>
+        </section>
+      </section>
     </main>
   );
 }
