@@ -19,7 +19,7 @@ const config: Config = {
       },
       animation: {
         scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+          "scroll var(--animation-duration, 100s) var(--animation-direction, forwards) linear infinite",
         marquee: "marquee 20s linear infinite",
         aurora: "aurora 60s linear infinite",
       },
