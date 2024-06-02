@@ -1,7 +1,6 @@
 import React from "react";
 import { fetchTestimonial } from "@/lib/fetchTestimonials";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
-import { companies } from "@/data";
 import { fetchClients } from "@/lib/fetchClients";
 
 export default async function TestimonialSection() {
