@@ -16,12 +16,14 @@ const Footer = () => {
 
       <div className="flex flex-col text-center items-center relative z-10">
         <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black dark:text-white leading-tight sm:leading-snug md:leading-normal">
-          Ready to take <span className="text-[#c3d740]">your</span> digital
-          presence to the next level?
+          Need Financial Assistance Now? <br /> Let{" "}
+          <span className="text-[#c3d740]">NeoPaisa</span> Help You Get the
+          Funds.
         </h2>
         <p className="text-center text-sm sm:text-base md:text-lg font-normal text-gray-500 max-w-md mt-5 mx-auto leading-relaxed">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          Facing a financial crunch? Neopaisa is here to help. Apply for a loan
+          and get fast access to the funds you need with terms that work for
+          you. Apply now and get started!
         </p>
 
         <a href="mailto:neopaisa.com@gmail.com" className="mt-4">
