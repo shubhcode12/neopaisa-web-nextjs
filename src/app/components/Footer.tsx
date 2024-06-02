@@ -19,7 +19,7 @@ const Footer = () => {
           Ready to take <span className="text-[#c3d740]">your</span> digital
           presence to the next level?
         </h2>
-        <p className="text-center text-sm sm:text-base md:text-lg font-normal text-gray-500 max-w-md mt-2 mx-auto leading-relaxed">
+        <p className="text-center text-sm sm:text-base md:text-lg font-normal text-gray-500 max-w-md mt-5 mx-auto leading-relaxed">
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
