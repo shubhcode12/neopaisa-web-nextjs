@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import { MacbookScroll } from "../components/MacbookScroll";
+import { MacbookScroll } from "./ui/MacbookScroll";
 import Link from "next/link";
 
 

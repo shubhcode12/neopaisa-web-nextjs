@@ -1,4 +1,4 @@
-import { cn } from "../utils/cn";
+import { cn } from "../../utils/cn";
 import Image from "next/image";
 
 const truncateText = (text : any, limit: number) => {

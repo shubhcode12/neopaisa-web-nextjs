@@ -1,5 +1,4 @@
 import React from "react";
-import { BentoGridItem } from "./BentoGrid";
 import { fetchBlogs } from "@/lib/fetchBlogs";
 import Link from "next/link";
 import Image from "next/image";
