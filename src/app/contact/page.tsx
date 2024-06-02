@@ -4,6 +4,7 @@ import navItems from "../utils/NavItems";
 import { useState } from "react";
 import { database } from "../utils/firebaseConfig";
 import { get, ref, push } from "firebase/database";
+import Footer from "../components/Footer";
 
 export default function Contact() {
 
@@ -120,6 +121,8 @@ export default function Contact() {
           </div>
         </section>
       </section>
+
+      <Footer/>
     </main>
   );
 }
