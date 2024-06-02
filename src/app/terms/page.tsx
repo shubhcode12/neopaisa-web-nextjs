@@ -1,8 +1,12 @@
 // components/TermsAndConditions.js
 import React from "react";
+import { Navbar } from "../components/NavBar";
+import navItems from "../utils/NavItems";
 
 const TermsAndConditions = () => {
   return (
+    <main className="relative bg-[#0c0c10] my-16 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10">
+    <Navbar navItems={navItems} className="custom-classname" />
     <div className="p-4 md:p-8 text-white-900">
       <h1 className="text-2xl font-bold mb-4">Terms &amp; Conditions</h1>
       <p>
@@ -159,6 +163,7 @@ const TermsAndConditions = () => {
 
       <hr className="my-6" />
     </div>
+    </main>
   );
 };
 
