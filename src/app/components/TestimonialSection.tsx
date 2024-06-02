@@ -11,7 +11,7 @@ export default async function TestimonialSection() {
   return (
     <section id="testimonials" className="max-w-7xl mx-auto w-full relative overflow-hidden py-44 px-4">
       <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-        Kind words from satisfied clients
+ui        Kind words from <span className="text-[#c3d740]">satisfied</span> clients
       </h2>
       <p className="text-center text-base md:text-lg font-normal text-gray-500 max-w-md mt-2 mx-auto">
         Don&quot;t just take our word for it. Read the testimonials from our
