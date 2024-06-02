@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchBlogs } from "@/lib/fetchBlogs";
+import { fetchBlogBySlug, fetchBlogs } from "@/lib/fetchBlogs";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -59,11 +59,18 @@ export default async function BlogsSection() {
                 <div className="font-sans font-normal text-gray-500 text-sm dark:text-neutral-300">
                   {item.content.map((cont: any, index: any) => (
                     <div key={index} className="mb-2">
-                      {truncateText(cont.text , 10)}
+                      {truncateText(cont.text, 10)}
                     </div>
                   ))}
                 </div>
               )}
+
+              <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+                <Link href={`/blogs/${item.uid}`}>
+                  <span>Read More</span>
+                </Link>
+                <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+              </button>
             </div>
           </div>
         ))}
