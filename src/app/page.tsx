@@ -6,6 +6,7 @@ import BlogsSection from "./components/BlogsSection";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
 import TestimonialSection from "./components/TestimonialSection";
+import Marquee from "./components/Marquee";
 
 export default async function Home() {
   return (
@@ -15,6 +16,8 @@ export default async function Home() {
       <HeroSection />
 
       <LampDemo />
+
+      <Marquee/>
 
       <TestimonialSection />
 
