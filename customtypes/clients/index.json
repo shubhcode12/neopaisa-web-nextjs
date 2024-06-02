@@ -19,7 +19,7 @@
           "placeholder": ""
         }
       },
-      "client_image": {
+      "image": {
         "type": "Image",
         "config": {
           "label": "Client Image",
