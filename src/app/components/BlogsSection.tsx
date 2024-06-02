@@ -20,7 +20,7 @@ export default async function BlogsSection() {
       id="blogSection"
       className="max-w-7xl mx-auto w-full relative overflow-hidden py-44 px-4">
       <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black dark:text-white leading-tight sm:leading-snug md:leading-normal">
-        Stay Informed with <span className="text-[#c3d740]">Neopaisa</span>{" "}
+        Stay Informed with <span className="text-[#c3d740]">NeoPaisa</span>{" "}
         Insights
       </h2>
       <p className="text-center text-sm sm:text-base md:text-lg font-normal text-gray-500 max-w-md mt-2 mx-auto leading-relaxed">
