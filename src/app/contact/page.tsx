@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { Navbar } from "../components/NavBar";
 import navItems from "../utils/NavItems";
+import { useState } from "react";
+import { database } from "../utils/firebaseConfig";
+import { get, ref, push } from "firebase/database";
 
 export default function Contact() {
   return (
