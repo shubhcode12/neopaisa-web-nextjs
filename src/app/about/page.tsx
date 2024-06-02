@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { FloatingNav } from "../components/FloatingNav";
-import { LampDemo } from "../components/LampBg";
 import navItems from "../utils/NavItems";
 import { Navbar } from "../components/NavBar";
 
