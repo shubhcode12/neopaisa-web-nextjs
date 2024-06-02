@@ -1,6 +1,7 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 import MagicButton from "../components/ui/MagicButton";
+import { Facebook, Instagram, Whatsapp } from "iconsax-react";
 
 const Footer = () => {
   return (
@@ -39,16 +40,25 @@ const Footer = () => {
           Copyright © 2024 NeoPaisa.com
         </p>
 
-        <div className="flex items-center gap-4 md:gap-3 mt-4 md:mt-0">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
-              <a href={info.link}>
-                <img src={info.img} alt="icons" width={20} height={20} />
-              </a>
-            </div>
-          ))}
+        <div className="flex items-center gap-4 md:gap-3 mt-4 md:mt-0">         
+          <div           
+            className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 ">
+            <a href="https://insagram.com/neopaisa.app">
+            <Instagram size="32" color="#c3d740"/>
+            </a>
+          </div>
+          <div           
+            className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200  ">
+            <a href="https://facebook.com/neopaisa.app">
+            <Facebook size="32" color="#c3d740"/>
+            </a>
+          </div>
+          <div           
+            className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200  ">
+            <a href="https://chat.whatsapp.com/B7yLKcUHAc92ymOtDRTs1L">
+            <Whatsapp size="32" color="#c3d740"/>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
