@@ -22,6 +22,7 @@ const config: Config = {
           "scroll var(--animation-duration, 100s) var(--animation-direction, forwards) linear infinite",
         marquee: "marquee 20s linear infinite",
         aurora: "aurora 60s linear infinite",
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       },
       keyframes: {
         scroll: {
@@ -33,12 +34,14 @@ const config: Config = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
         },
-        aurora: {
-          from: {
-            backgroundPosition: "50% 50%, 50% 50%",
+        spotlight: {
+          "0%": {
+            opacity: "0",
+            transform: "translate(-72%, -62%) scale(0.5)",
           },
-          to: {
-            backgroundPosition: "350% 50%, 350% 50%",
+          "100%": {
+            opacity: "1",
+            transform: "translate(-50%,-40%) scale(1)",
           },
         },
       },
