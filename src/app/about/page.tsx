@@ -13,7 +13,7 @@ export default function About() {
         id="testimonials"
         className="max-w-7xl mx-auto w-full relative overflow-hidden py-44 px-4">
         <h2 className="text-center text-4xl md:text-4xl lg:text-7xl font-bold text-black dark:text-white">
-          We're building a world where money can flow effortlessly into the
+          We&apos;re building a world where money can flow effortlessly into the
           things people truly care about.
           <span className="text-[#c3d740]"></span>
         </h2>
