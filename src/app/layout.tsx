@@ -9,8 +9,18 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "NeoPaisa - your instant loan companion",
+  title: {
+    default : "NeoPaisa - your instant loan companion",
+    template : `%s | NeoPaisa`
+  },
   description: "Get fast, hassle-free loans with Neopaisa",
+  metadataBase : new URL("https://neopaisa.com"),
+  keywords : ["neopaisa", "instant loan", "business loan" , "neopaisa credit", "neopaisa india"],
+  manifest : "./manifest.json",
+  openGraph :{
+    description : 'Neopaisa is your go-to app for quick and easy loans.',
+    images : ['']
+  }
 };
 
 export default function RootLayout({
