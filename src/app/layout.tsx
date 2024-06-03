@@ -18,8 +18,12 @@ export const metadata: Metadata = {
   keywords : ["neopaisa", "instant loan", "business loan" , "neopaisa credit", "neopaisa india"],
   manifest : "./manifest.json",
   openGraph :{
+    title : "NeoPaisa - your instant loan companion",
     description : 'Neopaisa is your go-to app for quick and easy loans.',
-    images : ['']
+    type : "website",
+    images : [''],
+    url : "https://neopaisa.com",
+    siteName : "NeoPaisa"
   }
 };
 
