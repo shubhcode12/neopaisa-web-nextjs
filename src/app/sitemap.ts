@@ -7,6 +7,7 @@ export default async function sitemap() {
   const blogPosts = responce.map((post: any) => {
     return {
       url: `${base_url}/blogs/${post?.uid}`,
+      lastModified: new Date(),
     };
   });
 
@@ -16,7 +17,6 @@ export default async function sitemap() {
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
-     
     },
     {
       url: "https://neopaisa.com/about",
@@ -42,6 +42,7 @@ export default async function sitemap() {
       changeFrequency: "yearly",
       priority: 0.5,
     },
-    ...blogPosts
+
+    ...blogPosts,
   ];
 }
